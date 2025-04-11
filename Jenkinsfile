@@ -13,11 +13,6 @@ pipeline {
                 sleep 10
             }
         }
-        stage('Checkout') {
-            steps {
-                checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/Tengify/spring-petclinic']])
-            }
-        }
         stage('Build') {
             steps {
                 bat './mvnw package'
